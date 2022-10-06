@@ -1,0 +1,22 @@
+.main {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px dotted dodgerblue;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: fantasy;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to left, skyblue, indigo, darkblue,blue , dodgerblue);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;;
+  cursor: pointer;
+}
