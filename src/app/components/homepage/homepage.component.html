@@ -1,8 +1,89 @@
 <form action="" class="mt-5">
-  <div class="row d-flex justify-content-between">
-    <div class="col-md-2 text-center ms-3 me-3">
-      <label for="page" class="form-label">PAGE<span class="small">(required)</span></label>
-      <input type="number" class="form-control" id="page">
+  <div class="row d-flex justify-content-between mx-5">
+    <div class="col-sm-2 text-center">
+      <label for="page" class="form-label"
+        >PAGE<span class="small">(required)</span></label
+      >
+      <input type="number" class="form-control" id="page" />
+    </div>
+    <div class="col-sm-4 text-center">
+      <label class="form-label" for="category">CATEGORY</label>
+      <select
+        id="category"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option value="">All</option>
+        <option value="1">Accounting</option>
+        <option value="2">Data Science</option>
+        <option value="3">Law</option>
+        <option value="4">Marketing</option>
+        <option value="5">Software Engineer</option>
+        <option value="6">Transportation and Logistics</option>
+      </select>
+    </div>
+    <div class="col-sm-3 text-center">
+      <label class="form-label" for="entry-level">ENTRY LEVEL</label>
+      <select
+        id="entry-level"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option value="">All</option>
+        <option value="1">Entry Level</option>
+        <option value="2">Mid Level</option>
+        <option value="3">Senior Level</option>
+        <option value="4">Management</option>
+      </select>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center mt-4 mb-3">
+    <div class="col-4 text-center">
+      <p>
+        <span class="location">LOCATION</span>
+        <span (click)="showLocationInput()" class="plus ms-3">+</span>
+      </p>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-evenly mx-3 loca" *ngIf="showLocation">
+    <div class="col-sm-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
     </div>
   </div>
 </form>
