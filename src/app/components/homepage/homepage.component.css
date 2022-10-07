@@ -37,3 +37,8 @@
   padding: 20px 10px;
   border: 1px dotted blue;
 }
+
+.form-check {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -26,7 +27,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomepageComponent, NotFoundComponent],
-  imports: [RouterModule.forRoot(routes), FontAwesomeModule, CommonModule],
+  imports: [
+    RouterModule.forRoot(routes),
+     FontAwesomeModule,
+      CommonModule,
+      FormsModule,
+      ReactiveFormsModule
+    ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
