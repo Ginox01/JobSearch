@@ -4,10 +4,17 @@
       <label for="page" class="form-label"
         >PAGE<span class="small">(required)</span></label
       >
-      <input type="number" class="form-control" id="page" formControlName="page" />
+      <input
+        type="number"
+        class="form-control"
+        id="page"
+        formControlName="page"
+      />
     </div>
     <div class="col-sm-4 text-center">
-      <label class="form-label" for="category">CATEGORY<span class="small">(required)</span></label>
+      <label class="form-label" for="category"
+        >CATEGORY<span class="small">(required)</span></label
+      >
       <select
         id="category"
         class="form-select"
@@ -15,12 +22,16 @@
         formControlName="category"
       >
         <option value="category=Accounting">Accounting</option>
-        <option value="category=Administration%20and%20Office">Administration and Office</option>
+        <option value="category=Administration%20and%20Office">
+          Administration and Office
+        </option>
         <option value="category=Data%20Science">Data Science</option>
         <option value="category=Law">Law</option>
         <option value="category=Marketing">Marketing</option>
         <option value="category=Software%20Engineer">Software Engineer</option>
-        <option value="category=Transportation%20and%20Logistics">Transportation and Logistics</option>
+        <option value="category=Transportation%20and%20Logistics">
+          Transportation and Logistics
+        </option>
       </select>
     </div>
     <div class="col-sm-3 text-center">
@@ -219,7 +230,64 @@
   </div>
   <div class="row d-flex justify-content-center mt-3">
     <div class="col-3 text-center">
-      <button [disabled]="form.invalid" (click)="searchJob()" class="btn btn-primary">SEARCH</button>
+      <button
+        [disabled]="form.invalid"
+        (click)="searchJob()"
+        class="btn btn-primary"
+      >
+        SEARCH
+      </button>
     </div>
   </div>
 </form>
+<div class="row d-flex justify-content-end mt-3 mb-2 me-2">
+  <div class="col-6 text-center counter" *ngIf="showResult">
+    <p id="count">
+      Page <span class="count">{{ numPage$ }}</span> of
+      <span class="count">{{ totPage$ }}</span> , offerte :
+      <span class="count">{{ totalJob$ }}</span>
+    </p>
+  </div>
+</div>
+<div class="row d-flex justify-content-center mt-5">
+  <div class="col-sm-10 text-center" id="result">
+    <div class="table-responsive" *ngIf="showResult">
+      <table class="table table-light table-hover">
+        <thead>
+          <tr>
+            <th>COMPANY</th>
+            <th>LEVEL</th>
+            <th>LOCATION</th>
+            <th>DATE</th>
+            <th>DETAILS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let job of jobs" class="color-primary">
+            <td>{{ job.company.name }}</td>
+            <td>{{ job.levels[0].short_name }}</td>
+            <td>{{ job.locations[0].name }}</td>
+            <td>{{ job.publication_date | date }}</td>
+            <td>
+              <button
+                class="btn btn-sm btn-primary"
+                (click)="goToDetailPage(job.id)"
+              >
+                <fa-icon [icon]="faSquarePlus"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row d-flex justify-content-center mt-5">
+  <div class="col-6 text-center">
+    <div
+      class="alert alert-danger text-center"
+      role="alert"
+      id="error-message"
+    ></div>
+  </div>
+</div>
