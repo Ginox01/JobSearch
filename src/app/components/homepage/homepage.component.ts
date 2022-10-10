@@ -17,6 +17,7 @@ export class HomepageComponent implements OnInit {
 
   declare jobs: any[];
   declare form: FormGroup;
+  declare company: any;
 
   declare numPage$: string;
   declare totPage$: string;
@@ -68,6 +69,7 @@ export class HomepageComponent implements OnInit {
           errorMessage!.style.display = 'none';
           this.displayResult(response);
           this.displayTable(response);
+          console.log(response);
         },
         error: (err) => {
           this.showResult = false;
@@ -92,5 +94,13 @@ export class HomepageComponent implements OnInit {
   goToDetailPage(id: string) {
     this.service.transferIDJob(id);
     this.route.navigateByUrl('home/job/' + id);
+  }
+
+  getCompany(id: string) {
+    this.service.fetchCompany(id).subscribe((data: any) => {
+      this.company = data;
+      this.service.passCompany(this.company);
+      this.route.navigateByUrl('home/company/' + id);
+    });
   }
 }

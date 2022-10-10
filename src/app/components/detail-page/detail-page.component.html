@@ -1,15 +1,26 @@
-<div *ngIf="job != undefined" >
+<div *ngIf="job != undefined" class="mt-5">
   <div class="text-center mt-2 mb-3">
-    <h1 class="main">{{job.name}}</h1>
+    <h1 class="main">{{ job.name }}</h1>
   </div>
   <div class="row d-flex justify-content-between mx-2">
     <div class="col-sm-4">
-      <p>Company : <span class="main">{{job.company.name}}</span></p>
-      <p>Location : <span class="main">{{job.locations[0].name}}</span></p>
+      <p>
+        Company :
+        <span class="main"
+          ><a class="company">{{ job.company.name }}</a></span
+        >
+      </p>
+      <p>
+        Location : <span class="main">{{ job.locations[0].name }}</span>
+      </p>
     </div>
     <div class="col-sm-4">
-      <p>Level : <span class="main">{{job.levels[0].short_name}}</span></p>
-      <p>Date : <span class="main">{{job.publication_date | date}}</span></p>
+      <p>
+        Level : <span class="main">{{ job.levels[0].short_name }}</span>
+      </p>
+      <p>
+        Date : <span class="main">{{ job.publication_date | date }}</span>
+      </p>
     </div>
   </div>
 </div>
@@ -19,8 +30,9 @@
   </div>
 </div>
 
-<div id="wrap-error" >
-
+<div id="wrap-error"></div>
+<div class="row d-flex justify-content-center">
+  <div class="col-6 text-center">
+    <button routerLink="/" class="btn btn-primary">HOME</button>
+  </div>
 </div>
-
-

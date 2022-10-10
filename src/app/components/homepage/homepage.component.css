@@ -56,3 +56,10 @@
   color: darkblue;
   font-weight: bold;
 }
+
+.company {
+  color: dodgerblue;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}

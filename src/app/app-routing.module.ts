@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DetailPageComponent } from './components/detail-page/detail-page.component';
+import { CompanyComponent } from './components/company/company.component';
 
 const routes: Routes = [
   {
@@ -25,13 +26,22 @@ const routes: Routes = [
     component: DetailPageComponent,
   },
   {
+    path: 'home/company/:id',
+    component: CompanyComponent,
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
 ];
 
 @NgModule({
-  declarations: [HomepageComponent, NotFoundComponent, DetailPageComponent],
+  declarations: [
+    HomepageComponent,
+    NotFoundComponent,
+    DetailPageComponent,
+    CompanyComponent,
+  ],
   imports: [
     RouterModule.forRoot(routes),
     FontAwesomeModule,

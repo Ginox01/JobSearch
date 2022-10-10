@@ -264,7 +264,11 @@
         </thead>
         <tbody>
           <tr *ngFor="let job of jobs" class="color-primary">
-            <td>{{ job.company.name }}</td>
+            <td>
+              <a (click)="getCompany(job.company.id)" class="company">{{
+                job.company.name
+              }}</a>
+            </td>
             <td>{{ job.levels[0].short_name }}</td>
             <td>{{ job.locations[0].name }}</td>
             <td>{{ job.publication_date | date }}</td>
