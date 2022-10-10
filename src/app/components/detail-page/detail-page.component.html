@@ -1,1 +1,26 @@
-<p>detail-page works!</p>
+<div *ngIf="job != undefined" >
+  <div class="text-center mt-2 mb-3">
+    <h1 class="main">{{job.name}}</h1>
+  </div>
+  <div class="row d-flex justify-content-between mx-2">
+    <div class="col-sm-4">
+      <p>Company : <span class="main">{{job.company.name}}</span></p>
+      <p>Location : <span class="main">{{job.locations[0].name}}</span></p>
+    </div>
+    <div class="col-sm-4">
+      <p>Level : <span class="main">{{job.levels[0].short_name}}</span></p>
+      <p>Date : <span class="main">{{job.publication_date | date}}</span></p>
+    </div>
+  </div>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="col-10">
+    <div id="wrap-content"></div>
+  </div>
+</div>
+
+<div id="wrap-error" >
+
+</div>
+
+

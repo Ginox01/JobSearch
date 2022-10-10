@@ -15,15 +15,19 @@ export class JobService {
     );
   }
 
-  getIDJob(id: string) {
+  transferIDJob(id: string) {
     this.IDJob = id;
-    return this.IDJob;
+    return this.IDJob
+  }
+
+  getIDJob(){
+    return this.IDJob
   }
 
   getSingleJob(id: string) {
     let api = this.http.get(
       `https://www.themuse.com/api/public/jobs/${this.IDJob}`
     );
-    console.log(api);
+    return api
   }
 }

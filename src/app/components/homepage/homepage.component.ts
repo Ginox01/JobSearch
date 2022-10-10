@@ -90,7 +90,7 @@ export class HomepageComponent implements OnInit {
   }
 
   goToDetailPage(id: string) {
-    this.service.getIDJob(id);
+    this.service.transferIDJob(id);
     this.route.navigateByUrl('home/job/' + id);
   }
 }
