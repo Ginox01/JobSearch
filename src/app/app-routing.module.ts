@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UpperPipe } from './pipes/upper.pipe';
 
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
     NotFoundComponent,
     DetailPageComponent,
     CompanyComponent,
+    UpperPipe
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -63,3 +63,11 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.company:hover {
+  color: darkblue;
+}
+
+.company:active {
+  color: red;
+}

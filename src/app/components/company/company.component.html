@@ -1,5 +1,38 @@
-<div *ngIf="company != undefined"></div>
-<div *ngIf="company == undefined"></div>
+<div *ngIf="company != undefined">
+  <div class="text-center mt-2 mb-5">
+    <h1 class="main">{{company.name}}</h1>
+  </div>
+  <div class="row d-flex justify-content-between mx-2">
+    <div class="col-6">
+      <p class="mb-1">Category : <span class="main">{{company.industries[0].name}}</span></p>
+      <p>Size : <span class="main">{{company.size.short_name | upper}}</span></p>
+    </div>
+    <div class="col-6">
+      <table class="table table-light text-center">
+        <thead>
+          <tr>
+            <th class="main">LOCATIONS</th>
+          </tr>
+        </thead>
+        <tbody  >
+          <tr *ngFor="let location of company.locations">
+            <td class="main" >{{location.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <div id="wrap-description" class=" description"></div>
+    </div>
+  </div>
+
+</div>
+<div *ngIf="company == undefined">
+  <h4 class="text-center mt-5">We are sorry but something has gone wrong</h4>
+</div>
 <div class="row d-flex justify-content-center mt-5">
   <div class="col-6 text-center">
     <button routerLink="/" class="btn btn-primary">HOME</button>

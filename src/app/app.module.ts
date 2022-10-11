@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TitlePipe } from './pipes/title.pipe';
 
+
 @NgModule({
   declarations: [AppComponent, TitlePipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

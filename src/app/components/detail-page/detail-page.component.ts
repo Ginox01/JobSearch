@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { JobService } from './../../services/job.service';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
@@ -9,8 +10,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class DetailPageComponent implements OnInit, AfterViewInit {
   declare IDJob: string;
   declare job: any;
+  declare company:any;
 
-  constructor(private service: JobService) {
+  constructor(private service: JobService , private route:Router) {
     this.IDJob = this.service.getIDJob();
     this.service.getSingleJob(this.IDJob).subscribe({
       next: (data) => {
@@ -28,6 +30,10 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
 
   displayContent() {
     let wrapperContent = document.getElementById('wrap-content');
+    wrapperContent!.style.backgroundColor = "darkblue";
+    wrapperContent!.style.color = "white";
+    wrapperContent!.style.padding = "10px";
+    wrapperContent!.style.borderRadius = "5px"
     if (this.job.contents == undefined) {
     } else {
       wrapperContent!.innerHTML = this.job.contents;
@@ -43,5 +49,14 @@ export class DetailPageComponent implements OnInit, AfterViewInit {
     </div>
   </div>
     `;
+  }
+
+  goToCompany(id:string){
+    this.service.fetchCompany(id)
+    .subscribe((data:any)=>{
+      this.company = data;
+      this.service.passCompany(this.company);
+      this.route.navigateByUrl('home/company/' + id)
+    })
   }
 }

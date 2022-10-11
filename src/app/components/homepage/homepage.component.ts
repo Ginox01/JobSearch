@@ -69,7 +69,6 @@ export class HomepageComponent implements OnInit {
           errorMessage!.style.display = 'none';
           this.displayResult(response);
           this.displayTable(response);
-          console.log(response);
         },
         error: (err) => {
           this.showResult = false;
