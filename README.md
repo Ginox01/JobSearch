@@ -30,7 +30,7 @@ This project is an exercise with the API of "The Muse" [this is the API](https:/
 
 ## How it works
 
-The homepage presents a form that you can insert the dates and call the API.
+The homepage presents a form where you can insert the dates and call the API.
 Once that you call the API it appears a table that display all the results , You can see more details by clicking the apposite button , furthermore , you can navigate to the company information by clicking the company name in the table.
 
 ## URL Project
